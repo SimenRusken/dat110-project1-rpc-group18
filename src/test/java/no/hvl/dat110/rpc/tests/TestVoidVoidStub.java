@@ -1,5 +1,7 @@
 package no.hvl.dat110.rpc.tests;
 
+import java.io.IOException;
+
 import no.hvl.dat110.rpc.RPCClient;
 import no.hvl.dat110.rpc.RPCLocalStub;
 import no.hvl.dat110.rpc.RPCUtils;
@@ -10,7 +12,7 @@ public class TestVoidVoidStub extends RPCLocalStub {
 		super(rpcclient);
 	}
 	
-	public void m() {
+	public void m() throws IOException {
 		
 		byte[] request = RPCUtils.marshallVoid();
 		

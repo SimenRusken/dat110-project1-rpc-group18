@@ -1,5 +1,7 @@
 package no.hvl.dat110.rpc.tests;
 
+import java.io.IOException;
+
 import no.hvl.dat110.rpc.RPCClient;
 import no.hvl.dat110.rpc.RPCLocalStub;
 import no.hvl.dat110.rpc.RPCUtils;
@@ -10,7 +12,7 @@ public class TestIntIntStub extends RPCLocalStub {
 		super(rpcclient);
 	}
 	
-	public int m(int x) {
+	public int m(int x) throws IOException {
 				
 		byte[] request = RPCUtils.marshallInteger(x);
 		

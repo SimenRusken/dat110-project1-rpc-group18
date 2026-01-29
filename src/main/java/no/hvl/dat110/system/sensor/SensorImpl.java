@@ -19,7 +19,6 @@ public class SensorImpl extends RPCRemoteImpl {
 
 		double temp = RANGE * Math.sin(seconds / 1000);
 
-		System.out.println("READ:" + temp);
 		
 		return (int) Math.ceil(temp);
 	}

@@ -1,5 +1,7 @@
 package no.hvl.dat110.system.controller;
 
+import java.io.IOException;
+
 import no.hvl.dat110.TODO;
 import no.hvl.dat110.rpc.*;
 
@@ -9,7 +11,7 @@ public class SensorStub extends RPCLocalStub {
 		super(rpcclient);
 	}
 
-	public int read() {
+	public int read() throws IOException {
 
 		// marshall parameter to read call (void parameter)
 		byte[] request = RPCUtils.marshallVoid();
