@@ -26,12 +26,11 @@ public class MessagingServer {
 
 	// accept an incoming connection from a client
 	public MessageConnection accept() throws IOException {
-		
+
 		Socket klient = welcomeSocket.accept();
 
 		MessageConnection connection = new MessageConnection(klient);
 		return connection;
-
 
 	}
 

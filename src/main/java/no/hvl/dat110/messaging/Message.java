@@ -9,17 +9,17 @@ public class Message {
 
 	// construction a Message with the data provided
 	public Message(byte[] data) {
-		
+
 		if (data == null || data.length < 0 || data.length > 127) {
 			throw new IllegalArgumentException("Må inneholde 0-127 bytes og kan ikkje være null");
 		} else {
 			this.data = data;
 		}
-		
+
 	}
 
 	public byte[] getData() {
-		return this.data; 
+		return this.data;
 	}
 
 }

@@ -12,44 +12,40 @@ public class MessageUtils {
 	public static String MESSAGINGHOST = "localhost";
 
 	public static byte[] encapsulate(Message message) {
-		
-		
+
 		byte[] segment = new byte[SEGMENTSIZE];
 		byte[] data = null;
 		int index = 0;
-		
-		
+
 		data = message.getData();
 		if (data == null) {
 			return null;
 		}
-		
+
 		int lengdeAvMessage = data.length;
-		segment[index] = (byte)lengdeAvMessage;
+		segment[index] = (byte) lengdeAvMessage;
 		index++;
-		
+
 		for (int i = 0; i < data.length; i++) {
-		    segment[index++] = data[i];
+			segment[index++] = data[i];
 		}
-		
-		
+
 		return segment;
-		
+
 	}
 
 	public static Message decapsulate(byte[] segment) {
 
-		
 		int lengde = segment[0];
-		
+
 		byte[] data = new byte[lengde];
-		
+
 		for (int i = 0; i < lengde; i++) {
-			data[i] = segment[i+1];
+			data[i] = segment[i + 1];
 		}
-		
+
 		Message message = new Message(data);
 		return message;
-	
+
 	}
 }

@@ -37,12 +37,8 @@ public class Controller {
 		for (int i = 0; i < N; i++) {
 			int readNumber = sensor.read();
 			display.write("" + readNumber);
+
 			
-			try {
-				Thread.sleep(2000);
-			} catch(InterruptedException e) {
-				e.printStackTrace();
-			}
 		}
 
 		stopdisplay.stop();

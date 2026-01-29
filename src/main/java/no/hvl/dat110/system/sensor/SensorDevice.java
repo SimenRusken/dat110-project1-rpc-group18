@@ -10,16 +10,16 @@ public class SensorDevice {
 	public static void main(String[] args) throws IOException {
 
 		System.out.println("Sensor server starting ...");
-		
+
 		RPCServer sensorserver = new RPCServer(Common.SENSORPORT);
 
-		SensorImpl sensor = new SensorImpl((byte)Common.READ_RPCID,sensorserver);
-		
+		SensorImpl sensor = new SensorImpl((byte) Common.READ_RPCID, sensorserver);
+
 		sensorserver.run();
-		
+
 		sensorserver.stop();
-		
+
 		System.out.println("Sensor server stopping ...");
-		
+
 	}
 }

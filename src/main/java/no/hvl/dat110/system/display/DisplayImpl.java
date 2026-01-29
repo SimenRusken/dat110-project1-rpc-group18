@@ -8,23 +8,21 @@ import no.hvl.dat110.rpc.RPCServer;
 public class DisplayImpl extends RPCRemoteImpl {
 
 	public DisplayImpl(byte rpcid, RPCServer rpcserver) {
-		super(rpcid,rpcserver);
+		super(rpcid, rpcserver);
 	}
 
 	public void write(String message) {
 		System.out.println("DISPLAY:" + message);
 	}
-	
+
 	public byte[] invoke(byte[] param) {
-		
+
 		byte[] returnval;
-		
 
 		String melding = RPCUtils.unmarshallString(param);
 		write(melding);
 		returnval = RPCUtils.marshallVoid();
-	
-		
+
 		return returnval;
 	}
 }

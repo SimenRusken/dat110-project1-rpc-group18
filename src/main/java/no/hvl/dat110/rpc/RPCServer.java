@@ -60,11 +60,10 @@ public class RPCServer {
 			replymsg = new Message(RPCUtils.encapsulate(rpcid, reply));
 			connection.send(replymsg);
 
-			connection.send(replymsg);
 
 			if (rpcid == RPCCommon.RPIDSTOP) {
-	
-			    stop = true;
+
+				stop = true;
 			}
 
 		}
